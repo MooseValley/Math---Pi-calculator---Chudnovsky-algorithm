@@ -22,9 +22,9 @@ arctan (1/x) = 1/x - 1/3x^3 + 1/5x^5 - 1/7x^7 + 1/9x^9 - .....
 
 ## Useful Links:
 
-* Chudnovsky algorithm, https://en.wikipedia.org/wiki/Chudnovsky_algorithm
+* **Chudnovsky algorithm**, https://en.wikipedia.org/wiki/Chudnovsky_algorithm
 
-* Calculating p by hand: the Chudnovsky algorithm, Stand-up Maths / Matt Parker, Mar 14, 2018, https://www.youtube.com/watch?v=LhlqCJjbEa0
+* **Calculating p by hand: the Chudnovsky algorithm**, Stand-up Maths / Matt Parker, Mar 14, 2018, https://www.youtube.com/watch?v=LhlqCJjbEa0
 
 * Can we calculate 100 digits of p by hand? The William Shanks method, Stand-up Maths / Matt Parker, Mar 15, 2022, https://www.youtube.com/watch?v=dtiLxLrzjOQ
 
