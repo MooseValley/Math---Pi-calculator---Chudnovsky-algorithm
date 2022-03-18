@@ -37,30 +37,32 @@ public class PiChudnovsky
 
    public static BigDecimal calculateTerm (int q)
    {
-      BigDecimal numeratorTerm1 = MINUS_ONE.pow (q); // Math.pow (-1, k)
+      //BigDecimal numeratorTerm1   = MINUS_ONE.pow (q); // Math.pow (-1, k)
 
-      BigDecimal numeratorTerm2 = factorial (6 * q);
+      BigDecimal numeratorTerm1   = factorial (6 * q);
 
-      BigDecimal numeratorTerm3 = new BigDecimal ("" + q);
-      numeratorTerm3 = numeratorTerm3.multiply (new BigDecimal ("545140134") );
-      numeratorTerm3 = numeratorTerm3.add      (new BigDecimal ("13591409")  );
+      BigDecimal numeratorTerm2   = new BigDecimal ("" + q);
+      numeratorTerm2              = numeratorTerm2.multiply (new BigDecimal ("545140134") );
+      numeratorTerm2              = numeratorTerm2.add      (new BigDecimal ("13591409")  );
 
       BigDecimal denominatorTerm1 = factorial (3 * q);
       BigDecimal denominatorTerm2 = factorial (q);
-      denominatorTerm2 = denominatorTerm2.pow (3);
+      denominatorTerm2            = denominatorTerm2.pow (3);
 
       BigDecimal denominatorTerm3 = new BigDecimal ("-262537412640768000");
-      denominatorTerm3 = denominatorTerm3.pow (q);
+      denominatorTerm3            = denominatorTerm3.pow (q);
 
 
-      BigDecimal numerator   = numeratorTerm1.multiply (numeratorTerm2).multiply (numeratorTerm3);
-      BigDecimal denominator = denominatorTerm1.multiply (denominatorTerm2).multiply (denominatorTerm3);
+      BigDecimal numerator   = numeratorTerm1.multiply   (numeratorTerm2);
 
-      BigDecimal result1 = numerator.divide (denominator, PRECISION);
+      BigDecimal denominator = denominatorTerm1.multiply (denominatorTerm2);
+      denominator            = denominator.multiply      (denominatorTerm3);
+
+      BigDecimal result1     = numerator.divide (denominator, PRECISION);
 
       System.out.println ("    numeratorTerm1:   " + numeratorTerm1);
       System.out.println ("    numeratorTerm2:   " + numeratorTerm2);
-      System.out.println ("    numeratorTerm3:   " + numeratorTerm3);
+    //System.out.println ("    numeratorTerm3:   " + numeratorTerm3);
       System.out.println ("    denominatorTerm1: " + denominatorTerm1);
       System.out.println ("    denominatorTerm2: " + denominatorTerm2);
       System.out.println ("    denominatorTerm3: " + denominatorTerm3);
@@ -76,10 +78,17 @@ public class PiChudnovsky
 
    public static BigDecimal calculatePi ()
    {
-      BigDecimal numerator      = new BigDecimal ("42698672");
+      /* Matt Parker used:
+         426880 x SQRT (10005) = 42698672 approx - NOPE - not good enough.
+         SQRT (10005) = 100.025  (approx)  - NOPE - not good enough.
+      */
+
+      BigDecimal numerator      = new BigDecimal ("426880");
+      numerator                 = numerator.multiply (new BigDecimal ("" + Math.sqrt (10005) ) );
+
       BigDecimal denominatorSum = new BigDecimal ("0");
 
-      for (int k = 0; k < 2; k++)
+      for (int k = 0; k < 5; k++)
       {
          denominatorSum = denominatorSum.add (calculateTerm (k) );
       }
