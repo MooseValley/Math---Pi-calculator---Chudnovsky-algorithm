@@ -83,12 +83,12 @@ public class PiChudnovsky
          SQRT (10005) = 100.025  (approx)  - NOPE - not good enough.
       */
 
-      BigDecimal numerator      = new BigDecimal ("426880");
+      BigDecimal numerator      = new BigDecimal     ("426880");
       numerator                 = numerator.multiply (new BigDecimal ("" + Math.sqrt (10005) ) );
 
       BigDecimal denominatorSum = new BigDecimal ("0");
 
-      for (int k = 0; k < 5; k++)
+      for (int k = 0; k < 1; k++)
       {
          denominatorSum = denominatorSum.add (calculateTerm (k) );
       }

@@ -6,6 +6,7 @@ The Chudnovsky Algorithm is the algorithm programmers and computers use to calcu
 
 ## Chudnovsky Algorithm
 
+<pre>
         (6q!) x (q * 545140134 + 13591409)
 F(q) = -------------------------------------------
         (3q!)  x (q!^3) x (-262537412640768000^q)
@@ -14,13 +15,23 @@ Pi = 426880 x SQRT (10005) / SUM (F(q))
 
 i.e. Calculate F(0), F(1), F(2), etc and sum them up, and divide into 426880 x SQRT (10005).
 
+Calculation using only F(0):
+0. 3.141592653589734020		Pi is correct to 13 digits
+                  ^^^^^
+
+Calculation using SUM F(0), F(1), F(2), F(3) and F(4):
+4.	3.141592653589793051		Pi is correct to 15 digits
+                    ^^^
+</pre>
 
 
-## William Shanks method
+## William Shanks method:
 
+<pre>
 Pi = 16 arctan (1/5) - 4 arctan (1/239)
 
 arctan (1/x) = 1/x - 1/3x^3 + 1/5x^5 - 1/7x^7 + 1/9x^9 - .....
+</pre>
 
 
 ## Useful Links:
