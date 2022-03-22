@@ -1,9 +1,10 @@
 /*
 
-This gives 6 decimal digits of accuracy for the 1st term (q=0).
+1st term (q=0): gives 6 decimal digits of accuracy:.
    3.141592......
 
-This gives 14 decimal digits of accuracy for the 2nd term (q=1).
+First 4 terms (q=0, 1, 2, 3): gives 15 decimal digits of accuracy:.
+   3.141592653589793...    Pi is correct to 15 digits
 
 
 */
